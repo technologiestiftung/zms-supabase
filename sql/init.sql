@@ -113,3 +113,6 @@ ALTER TABLE public.processes
 ALTER TABLE public.processes
 	DROP COLUMN profile_id;
 
+ALTER TABLE public.processes
+	ALTER COLUMN service_id TYPE text;
+
