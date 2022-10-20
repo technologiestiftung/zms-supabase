@@ -1,3 +1,10 @@
+# [1.6.0-rc.1](https://github.com/technologiestiftung/zms-supabase/compare/v1.5.0...v1.6.0-rc.1) (2022-10-20)
+
+
+### Features
+
+* Make service_id a text column ([92401df](https://github.com/technologiestiftung/zms-supabase/commit/92401df8a3735cf57cf716cb54b6a2535c6fff0b))
+
 # [1.5.0](https://github.com/technologiestiftung/zms-supabase/compare/v1.4.0...v1.5.0) (2022-10-20)
 
 
