@@ -18,11 +18,11 @@
 		"url": "https://github.com/technologiestiftung/zms-supabase/issues"
 	},
 	"homepage": "https://github.com/technologiestiftung/zms-supabase#readme",
-	"dependencies": {},
 	"devDependencies": {
-		"@technologiestiftung/semantic-release-config": "1.1.0",
 		"@faker-js/faker": "7.6.0",
+		"@saithodev/semantic-release-backmerge": "2.1.2",
 		"@supabase/supabase-js": "2.0.0",
+		"@technologiestiftung/semantic-release-config": "1.1.0",
 		"@types/jest": "29.1.2",
 		"@typescript-eslint/eslint-plugin": "5.40.0",
 		"@typescript-eslint/parser": "5.40.0",
