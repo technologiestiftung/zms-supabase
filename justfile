@@ -1,6 +1,6 @@
 # docs https://github.com/casey/just
 # justfile load .env file
-set dotenv-load
+# set dotenv-load
 set shell := ["bash", "-uc"]
 alias types:= generate-types
 
@@ -11,3 +11,6 @@ default:
 
 generate-types:
     supabase gen types typescript --local > ./poc/pubsub/src/db-types.ts
+
+users-generate-prod:
+    npx ts-node-esm  ./scripts/users/generate.ts
