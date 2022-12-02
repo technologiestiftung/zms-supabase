@@ -10,17 +10,15 @@ CREATE TABLE "public"."process_service_types" (
 ALTER TABLE "public"."processes"
 	DROP COLUMN "service_type_id";
 
-ALTER TABLE "public"."service_types"
-	DROP COLUMN "name";
-
-ALTER TABLE "public"."service_types"
-	ADD COLUMN "text" text NOT NULL;
-
+-- ALTER TABLE "public"."service_types"
+-- 	DROP COLUMN "name";
+-- ALTER TABLE "public"."service_types"
+-- 	ADD COLUMN "text" text NOT NULL;
 CREATE UNIQUE INDEX process_service_type_pkey ON public.process_service_types USING btree (process_id, service_type_id);
 
-CREATE UNIQUE INDEX service_types_text_id_key ON public.service_types USING btree (text, id);
+CREATE UNIQUE INDEX service_types_text_id_key ON public.service_types USING btree (name, id);
 
-CREATE UNIQUE INDEX service_types_text_key ON public.service_types USING btree (text);
+CREATE UNIQUE INDEX service_types_text_key ON public.service_types USING btree (name);
 
 ALTER TABLE "public"."process_service_types"
 	ADD CONSTRAINT "process_service_type_pkey" PRIMARY KEY USING INDEX "process_service_type_pkey";
