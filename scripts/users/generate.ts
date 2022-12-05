@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 // change the below import to data.js for testing in a local environment
 import { resolve } from "path";
-import { data } from "./data.production.js";
+import { data } from "./data.js";
 import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 
 // use __dirname in esm
@@ -27,7 +27,7 @@ console.info(SUPABASE_URL);
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 async function main() {
 	for (const u of data) {
-		console.info(`Creating user ${u.email}`);
+		console.info(`Creating user ${u.email}: ${u.password}`);
 		const { data: user, error } = await supabase.auth.signUp({
 			email: u.email,
 			password: u.password,
