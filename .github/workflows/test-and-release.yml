@@ -39,7 +39,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD  }}
       - uses: supabase/setup-cli@v1
         with:
-          version: 1.8.7
+          version: 1.33.0
       - run: supabase start
       - run: npm ci
       - run: npm t
