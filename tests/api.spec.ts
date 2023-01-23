@@ -1,14 +1,8 @@
 import { setupDB, tearDownDB } from "./utils/db";
-import {
-	createUsersSupabaseClient,
-	supabaseClient,
-	supabaseSDKSignIn,
-	supabaseSDKSignUp,
-} from "./utils/supabase";
+import { createUsersSupabaseClient, supabaseSDKSignIn, supabaseSDKSignUp } from "./utils/supabase";
 
-const SUPABASE_URL = "http://localhost:54321";
-const SUPABASE_ANON_KEY =
-	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24ifQ.625_WdcF3KHqz5amU0x2X5WWHP-OEs_4qj0ssLNHzTs";
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
 if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
 	throw new Error("Missing environment variables");
 }
