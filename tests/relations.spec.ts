@@ -29,7 +29,7 @@ describe("relations table", () => {
 			.select(
 				`
 			id, service_id,
-			service_types(id, text)
+			service_types(id, name)
 			`,
 			)
 			.eq("id", p_data[0].id);
