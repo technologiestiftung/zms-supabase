@@ -27,6 +27,29 @@ This is the backend for the ZMS Prototyp Bürgeramt project.
 2. Start the local database `supabase start`
 3. Push the local state to the remote
 
+## Realtime
+
+To make realtime subscriptions to the tables work you need to run this sql query in the database:
+
+```sql
+-- See https://supabase.com/docs/guides/realtime/postgres-changes
+BEGIN;
+-- remove the supabase_realtime publication
+DROP publication IF EXISTS supabase_realtime;
+-- re-create the supabase_realtime publication with no tables
+CREATE publication supabase_realtime;
+COMMIT;
+
+-- add a table to the publication
+ALTER publication supabase_realtime
+	ADD TABLE processes;
+
+ALTER TABLE processes REPLICA IDENTITY
+	FULL;
+
+
+```
+
 ## Cron Jobs for score Computation
 
 Adding the cron extension [to the migrations](supabase/migrations/20221005135333_cron.sql) did create some errors in local development. To fix this, the following steps are necessary:
